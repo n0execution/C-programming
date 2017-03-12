@@ -5,10 +5,8 @@
 #include <windows.h>
 main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
     system("cls");
-    printf("\nВітаю. за допомогою цієї програми Ви можете обчислити число, що дорівнює корню\nзаданого степеня деякого числа із заданою точністю.\n");
+    printf("\nThis program will help you to calculate the number with entered power and accuracy.\n");
     getch();
     system("cls");
     do
@@ -18,55 +16,55 @@ main()
         SetConsoleOutputCP(1251);
         double x, k, delta, y, yi, eps;
         int i, step;
-        printf("\nВведіть число, корінь з якого хочете шукати.\n");
+        printf("\nEnter the number:\n");
         scanf("%lf", &x);
         if(getchar() != '\n')
         {
-            printf("Помилка! Не вводіть символи.\n");
+            printf("Error! Do not enter symbols.\n");
             fflush(stdin);
             getch();
             return main();
         }
-        printf("Введіть степінь корня.\n");
+        printf("Enter the power:\n");
         scanf("%lf", &k);
         if(getchar() != '\n')
         {
-            printf("Помилка! Не вводіть символи.\n");
+            printf("Error! Do not enter symbols.\n");
             fflush(stdin);
             getch();
             return main();
         }
-        printf("Введіть точність обчислення. Наприклад, 1e-4. Або ж 0.001.\nНе вводіть точність, що > 1e-8, або <= 0.\n");
+        printf("Enter accuracy. Do not enter accuracy more than 1e-8 or not more than 0.\n");
         scanf("%lf", &eps);
         if(getchar() != '\n')
         {
-            printf("Помилка! Не вводіть символи.\n");
+            printf("Error! Do not enter symbols.\n");
             fflush(stdin);
             getch();
             return main();
         }
         if (eps >= 1)
         {
-            printf("Помилка! Задана точність не може бути більша або дорівнювати одиниці.\n");
+            printf("Error!.\n");
             getch();
             return main();
         }
         if (eps <= 0)
         {
-            printf("Помилка! Задана точність не може бути менша або дорівнювати нулю.\n");
+            printf("Error!\n");
             getch();
             return main();
         }
         if(eps < 1e-8)
         {
-            printf("Помилка! Занадто велика задана точність.\n");
+            printf("Error! Too big accuracy.\n");
             getch();
             return main();
         }
        step = k;
        if ((x == 0 && step < 0) || (step < 0 && step % 2 == 0 && x < 0)||(step > 0 && step % 2==0 && x < 0) || step == 0)
         {
-            printf("Помилка! Спробуйте ще раз.\n");
+            printf("Error! Try again.\n");
             fflush(stdin);
             getch();
             return main();
@@ -102,10 +100,10 @@ main()
         }
          if(k == 1 || x == 0)
             y = x;
-        printf("Відповідь: %.*lf\n", n, y);
+        printf("Answer: %.*lf\n", n, y);
         getch();
         system("cls");
-        printf("Якщо Ви хочете продовжити, натисніть будь-яку клавішу. В іншому випадку - натисніть \"ESC\".\n");
+        printf("If you want to continue, please press any key, otherwise - press \"ESC\".\n");
     }
 while(getch() != 27);
 return 0;

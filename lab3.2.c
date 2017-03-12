@@ -55,7 +55,7 @@ main()
         }
 
 		
-        printf("¬вед≥ть р≥к.\n");
+        printf("Enter the year:\n");
         if (!scanf("%d", &year)||getchar() != '\n')
         {
             printf("Error! Do not enter rational numbers or symbols.\n");
